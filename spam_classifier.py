@@ -28,6 +28,9 @@ def calculate_word_frequencies(body, label):
                 len_ham += 2
     return
 
+def train_best():
+    pass
+
 def train():
     global pA
     global pNotA
@@ -39,7 +42,7 @@ def train():
         spam_count, ham_count = spam_count + int(item[1] == SPAM), ham_count + int(item[1] == NOT_SPAM)
         total += 1
     pA, pNotA = spam_count / total, ham_count / total
-    return  
+    return
 
 def calculate_P_Bi_A(word, label):
     global len_spam
@@ -77,16 +80,17 @@ def classify(email):
 
 SPAM, NOT_SPAM = 'SPAM', 'NOT_SPAM'
 
-train_data = [  
-    ['Купите новое чистящее средство', SPAM],   
-    ['Купи мою новую книгу', SPAM],  
+train_data = [
+    ['Купите новое чистящее средство', SPAM],
+    ['Купи мою новую книгу', SPAM],
     ['Подари себе новый телефон', SPAM],
     ['Добро пожаловать и купите новый телевизор', SPAM],
-    ['Привет давно не виделись', NOT_SPAM], 
-    ['Довезем до аэропорта из пригорода всего за 399 рублей', SPAM], 
-    ['Добро пожаловать в Мой Круг', NOT_SPAM],  
-    ['Я все еще жду документы', NOT_SPAM],  
+    ['Привет давно не виделись', NOT_SPAM],
+    ['Довезем до аэропорта из пригорода всего за 399 рублей', SPAM],
+    ['Добро пожаловать в Мой Круг', NOT_SPAM],
+    ['Я все еще жду документы', NOT_SPAM],
     ['Приглашаем на конференцию Data Science', NOT_SPAM],
     ['Потерял твой телефон напомни', NOT_SPAM],
-    ['Порадуй своего питомца новым костюмом', SPAM]
+    ['Порадуй своего питомца новым костюмом', SPAM],
+    ['Порадуй своего питомца новым костюмом', SPAM],
 ]
